@@ -4,7 +4,7 @@ var minify = require('gulp-minify');
 var cleanCss = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 
-var css = ['src/css/normalize.css','src/css/bulmaswatch.min.css','node_modules/bulma/css/bulma.min.css','src/css/bulmaswatch.min.css','src/css/main.css'];
+var css = ['src/css/normalize.css','src/css/grid24.css','src/css/bulmaswatch.min.css','src/css/fontawesome-all.min.css','src/css/main.css'];
 var js = ['src/js/plugins.js','src/js/main.js'];
 
 
@@ -23,8 +23,8 @@ gulp.task('pack-css', function () {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('src/js/*.js', ['pack-js']);
-    gulp.watch('src/css/*.css', ['pack-css']);
+    gulp.watch('src/js/**.js', ['pack-js']);
+    gulp.watch('src/css/**.css', ['pack-css']);
    });
  
 

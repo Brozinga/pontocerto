@@ -14,6 +14,8 @@ html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
+    height: 100%;
+    min-height: 100%;
 }
 
 /*
@@ -97,21 +99,52 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+main {
+    position: relative;
+}
 
+.centered{
+    text-align: center;
+}
 
+.margin-top-login {
+    margin-top: 8vh;
+}
 
+.margin-lang {
+    margin-bottom: 15px;
+    z-index: 1;
+}
 
+.margin-lang > div > .heading{
+    float: right;
+}
 
+.footer> div > div p {
+    font-weight: 100;
+    color: #999;
+}
 
+.footer {
+    padding: 2rem 2rem 2rem;
+    margin-top: 50px;
+}
 
+/* // Small devices (landscape phones, 576px and up) */
 
+@media (min-width: 576px) {}
 
+/* // Medium devices (tablets, 768px and up) */
 
+@media (min-width: 768px) {}
 
+/* // Large devices (desktops, 992px and up) */
 
+@media (min-width: 992px) {}
 
+/* // Extra large devices (large desktops, 1200px and up) */
 
-
+@media (min-width: 1200px) {}
 
 /* ==========================================================================
    Helper classes
@@ -145,7 +178,8 @@ textarea {
     padding: 0;
     position: absolute;
     width: 1px;
-    white-space: nowrap; /* 1 */
+    white-space: nowrap;
+    /* 1 */
 }
 
 /*
@@ -189,8 +223,10 @@ textarea {
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
 }
 
 .clearfix:after {
@@ -208,9 +244,9 @@ textarea {
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
 
@@ -225,35 +261,30 @@ textarea {
     *:before,
     *:after {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster:
+        color: #000 !important;
+        /* Black prints faster:
                                    http://www.sanbeiji.com/archives/953 */
         box-shadow: none !important;
         text-shadow: none !important;
     }
-
     a,
     a:visited {
         text-decoration: underline;
     }
-
     a[href]:after {
         content: " (" attr(href) ")";
     }
-
     abbr[title]:after {
         content: " (" attr(title) ")";
     }
-
     /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
         content: "";
     }
-
     pre {
         white-space: pre-wrap !important;
     }
@@ -262,28 +293,23 @@ textarea {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
     /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-
     thead {
         display: table-header-group;
     }
-
     tr,
     img {
         page-break-inside: avoid;
     }
-
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
     }
-
     h2,
     h3 {
         page-break-after: avoid;

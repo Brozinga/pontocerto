@@ -1,0 +1,22 @@
+{
+    "ptBR":{
+        "lgUsuario":"Usuário",
+        "lgSenha":"Senha",
+        "lgPlaceUsuario":"Insira seu login",
+        "lgPlaceSenha":"Insira sua senha",
+        "lgLangPortugues":"Portugues",
+        "lgLangIngles":"Inglês",
+        "lgBtnEntrar":"Entrar",
+        "lgIdioma":"Idioma"
+    },
+    "enUS":{
+        "lgUsuario":"User",
+        "lgSenha":"Password",
+        "lgPlaceUsuario":"Enter your user",
+        "lgPlaceSenha":"Enter your password",
+        "lgLangPortugues":"Portuguese",
+        "lgLangIngles":"English",
+        "lgBtnEntrar":"Enter",
+        "lgIdioma":"Language"
+    }
+}
