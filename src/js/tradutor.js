@@ -6,7 +6,7 @@ $(document).ready(() => {
     //Pegar o arquivo de Tradutor.
     function PegarTraducao() {
         $.getJSON("js/tradutor.json", {
-                format: "jspn"
+                format: "json"
             })
             .done(function (data) {
 
@@ -58,12 +58,20 @@ $(document).ready(() => {
     })
 
 
+    //Função que Executa a Mudança do Idioma.
     function mudarTraducao(data) {
         //Tranformando a linguagem baseado no valor recebido
-        if (data == 'ptBR') {
-            traduzir(lang.ptBR);
-        } else if(data == 'enUS') {
-            traduzir(lang.enUS);
+        switch (data) {
+            case 'ptBR':
+                traduzir(lang.ptBR);
+                break;
+            case 'enUS':
+                traduzir(lang.enUS);
+                break;
+            default:
+                console.log("Erro ao traduzir a página!");
+                traduzir(lang.ptBR);
+                break;
         }
 
         $('.lang').val(startLang);
