@@ -14,6 +14,11 @@ $(document).ready(() => {
                 localStorage.removeItem("language");
                 localStorage.setItem("language", JSON.stringify(data));
                 lang = data;
+
+                //Executando pra verificar se já está setado uma linguagem preferida e setar no sistema.
+                verifyLangPref();
+                verifyLanguage();
+                mudarTraducao(startLang);
             })
             .fail(function () {
                 console.log("error");
@@ -27,7 +32,8 @@ $(document).ready(() => {
     //Função para verificar a linguagem preferida.
     function verifyLangPref() {
         if (localStorage.getItem("languagePref") == null) {
-            localStorage.setItem("languagePref", $('.lang').val());
+            localStorage.setItem("languagePref", $('#seletorLinguagem').val());
+            startLang = localStorage.getItem("languagePref");
         } else {
             startLang = localStorage.getItem("languagePref");
         }
@@ -42,16 +48,11 @@ $(document).ready(() => {
         }
     }
 
-    //Executando pra verificar se já está setado uma linguagem preferida e setar no sistema.
-    verifyLangPref();
-    verifyLanguage();
-    mudarTraducao(startLang);
-
     //Setando uma novaLinguagem via Select de Linguagem.
-    $('.lang').on('change', function () {
+    $('#seletorLinguagem').on('change', function () {
 
-        localStorage.setItem("languagePref", $('.lang').val());
-        startLang = $('.lang').val();
+        localStorage.setItem("languagePref", $('#seletorLinguagem').val());
+        startLang = $('#seletorLinguagem').val();
 
         mudarTraducao(startLang);
 
@@ -74,7 +75,7 @@ $(document).ready(() => {
                 break;
         }
 
-        $('.lang').val(startLang);
+        $('#seletorLinguagem').val(startLang);
     }
 
 

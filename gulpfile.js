@@ -4,8 +4,8 @@ var minify = require('gulp-minify');
 var cleanCss = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 
-var css = ['src/css/normalize.css','src/css/grid24.css','src/css/bulmaswatch.min.css','src/css/fontawesome-all.min.css','src/css/main.css'];
-var js = ['src/js/plugins.js','src/js/main.js'];
+var css = ['src/css/normalize.css','src/css/grid24.css','src/css/bulmaswatch.min.css','src/css/fontawesome-all.min.css','./node_modules/izitoast/dist/css/iziToast.min.css','src/css/main.css'];
+var js = ['src/js/plugins.js','./node_modules/izitoast/dist/js/iziToast.min.js','src/js/main.js'];
 
 
 gulp.task('pack-js', function () {
