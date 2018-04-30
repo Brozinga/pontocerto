@@ -1972,6 +1972,7 @@ html {
     line-height: 1.4;
     height: 100%;
     min-height: 100%;
+    position: relative;
 }
 
 /*
@@ -2057,6 +2058,10 @@ textarea {
 
 main {
     position: relative;
+    min-height: 100vh;
+    min-height: -webkit-calc(100vh - 88px);
+    min-height:    -moz-calc(100vh - 88px);
+    min-height:         calc(100vh - 88px);
 }
 
 .centered{
@@ -2082,9 +2087,12 @@ main {
 }
 
 .footer {
-    padding: 2rem 2rem 2rem;
-    margin-top: 50px;
+    padding: 2em 2em 2em 2em;
+    display: block;
+    width: 100%;
 }
+
+
 
 /* // Small devices (landscape phones, 576px and up) */
 
