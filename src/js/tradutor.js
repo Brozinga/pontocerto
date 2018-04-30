@@ -62,19 +62,7 @@ $(document).ready(() => {
     //Função que Executa a Mudança do Idioma.
     function mudarTraducao(data) {
         //Tranformando a linguagem baseado no valor recebido
-        switch (data) {
-            case 'ptBR':
-                traduzir(lang.ptBR);
-                break;
-            case 'enUS':
-                traduzir(lang.enUS);
-                break;
-            default:
-                console.log("Erro ao traduzir a página!");
-                traduzir(lang.ptBR);
-                break;
-        }
-
+          traduzir(lang[startLang]);
         $('#seletorLinguagem').val(startLang);
     }
 
