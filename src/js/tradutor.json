@@ -11,7 +11,8 @@
         "Erros":{
             "lgErro":"Erro",
             "lgErroLogar":"Erro ao tentar logar!",
-            "lgLoginVazio":"O login não pode ser vazio!"
+            "lgLoginVazio":"O login não pode ser vazio!",
+            "lgSenhaVazio":"A senha não pode ser vazia!"
         }
     },
     "enUS":{
@@ -26,7 +27,8 @@
         "Erros":{
             "lgErro":"Error",
             "lgErroLogar":"Error while trying to login!",
-            "lgLoginVazio":"Login can not be empty!"
+            "lgLoginVazio":"Login can not be empty!",
+            "lgSenhaVazio":"Password can not be empty!"
         }
     }
 }

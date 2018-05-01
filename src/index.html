@@ -1,10 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="pt-BR">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Ponto Certo!</title>
+    <title>Ponto Certo - Controle de Horas</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,9 +24,9 @@
     <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#4b87c7">
+    <meta name="msapplication-TileColor" content="#127ba3">
     <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#4b87c7">
+    <meta name="theme-color" content="#127ba3">
 
     <!-- Place favicon.ico in the root directory -->
 
@@ -55,34 +55,35 @@
                             </select>
                         </span>
                     </div>
-                    <div class="col-md-12 col-md-offset-6 col-sm-14 col-sm-offset-5 col-xs-20 col-xs-offset-2">
-                        <img src="./img/Projeto-PontoCerto.png" alt="Logo ponto certo">
-                    </div>
-                    <div class="field col-md-16 col-md-offset-4 col-sm-24 col-xs-24">
-                        <label class="label" data-language="lgUsuario"></label>
-                        <p class="control has-icons-left has-icons-right">
-                            <input class="input is-rounded" data-language="lgPlaceUsuario" type="text">
-                            <span class="icon is-small is-left">
-                                <i class="fa fa-user"></i>
-                            </span>
-                        </p>
-                    </div>
-                    <div class="field col-md-16 col-md-offset-4 col-sm-24 col-xs-24">
-                        <label class="label" data-language="lgSenha"></label>
-                        <p class="control has-icons-left has-icons-right">
-                            <input class="input is-rounded" data-language="lgPlaceSenha" type="password">
-                            <span class="icon is-small is-left">
-                                <i class="fa fa-lock"></i>
-                            </span>
-                        </p>
-                    </div>
-                    <div class="field">
-                        <div class="col-md-24 col-sm-24">
-                            <button class="col-md-6 col-md-offset-4 col-sm-12 col-xs-24 button is-primary is-rounded" data-language="lgBtnEntrar"></button>
+                    <form id="frmLogin">
+                        <div class="col-md-12 col-md-offset-6 col-sm-14 col-sm-offset-5 col-xs-20 col-xs-offset-2">
+                            <img src="./img/Projeto-PontoCerto.png" alt="Logo ponto certo">
                         </div>
-                    </div>
-            </div>
-            </article>
+                        <div class="field col-md-16 col-md-offset-4 col-sm-24 col-xs-24">
+                            <label class="label" data-language="lgUsuario"></label>
+                            <p class="control has-icons-left has-icons-right">
+                                <input id="frmLoginUsuario" class="input is-rounded" data-language="lgPlaceUsuario" type="text">
+                                <span class="icon blue-font is-small is-left">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="field col-md-16 col-md-offset-4 col-sm-24 col-xs-24">
+                            <label class="label" data-language="lgSenha"></label>
+                            <p class="control has-icons-left has-icons-right">
+                                <input id="frmLoginSenha" class="input is-rounded" data-language="lgPlaceSenha" type="password">
+                                <span class="icon blue-font is-small is-left">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <div class="col-md-24 col-sm-24">
+                                <button class="col-md-6 col-md-offset-4 col-sm-12 col-xs-24 button is-primary is-rounded" data-language="lgBtnEntrar"></button>
+                            </div>
+                        </div>
+                    </form>
+                </article>
             </div>
         </section>
     </main>
@@ -93,18 +94,11 @@
             </div>
         </div>
     </footer>
-
-
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')
-
-    </script>
+    <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="js/tradutor.js"></script>
     <script src="build/js/bundle.js"></script>
-
+    <script src="js/pages/login.js"></script>
 </body>
 
 </html>

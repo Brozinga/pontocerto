@@ -2092,6 +2092,17 @@ main {
     width: 100%;
 }
 
+.ErroInformacao{
+    display: none;
+}
+
+.blue-font{
+    color: #127ba3;
+}
+
+.blue-font > i{
+    color: #cac9c9;
+}
 
 
 /* // Small devices (landscape phones, 576px and up) */
