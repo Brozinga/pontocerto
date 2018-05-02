@@ -16,8 +16,8 @@ $(document).ready(() => {
                 lang = data;
 
                 //Executando pra verificar se já está setado uma linguagem preferida e setar no sistema.
-                verifyLangPref();
-                verifyLanguage();
+                verificarLinguaPreferencia();
+                verificarLingua();
                 mudarTraducao(startLang);
             })
             .fail(function () {
@@ -30,7 +30,7 @@ $(document).ready(() => {
     //Começando a traduzir o arquivo ###############################################
 
     //Função para verificar a linguagem preferida.
-    function verifyLangPref() {
+    function verificarLinguaPreferencia() {
         if (localStorage.getItem("languagePref") == null) {
             localStorage.setItem("languagePref", $('#seletorLinguagem').val());
             startLang = localStorage.getItem("languagePref");
@@ -40,7 +40,7 @@ $(document).ready(() => {
     }
 
     //Função para verificar se existe linguagem no localStorage.
-    function verifyLanguage() {
+    function verificarLingua() {
         if (localStorage.getItem("language") == null) {
             PegarTraducao();
         } else {
