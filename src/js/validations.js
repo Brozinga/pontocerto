@@ -49,7 +49,9 @@ function validarLogin(login, senha){
         senha.focus();
 
         return false;
+
     }else{
+
         return true;
     }
 }

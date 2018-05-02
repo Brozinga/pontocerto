@@ -15,7 +15,7 @@ $(document).ready(function () {
     $('#frmLogin').submit(function () {
         event.preventDefault();
         if (validarLogin($("#frmLoginUsuario"), $('#frmLoginSenha'))) {
-
+            window.location.href = "administracao.html";
         };
 
     });

@@ -1,34 +1,96 @@
 {
-    "ptBR":{
-        "lgUsuario":"Usuário",
-        "lgSenha":"Senha",
-        "lgPlaceUsuario":"Insira seu login",
-        "lgPlaceSenha":"Insira sua senha",
-        "lgLangPortugues":"Portugues",
-        "lgLangIngles":"Inglês",
-        "lgBtnEntrar":"Entrar",
-        "lgIdioma":"Idioma",
-        "Erros":{
-            "lgErro":"Erro",
-            "lgErroLogar":"Erro ao tentar logar!",
-            "lgLoginVazio":"O login não pode ser vazio!",
-            "lgSenhaVazio":"A senha não pode ser vazia!"
+    "ptBR": {
+        "lgUsuario": "Usuário",
+        "lgSenha": "Senha",
+        "lgPlaceUsuario": "Insira seu login",
+        "lgPlaceSenha": "Insira sua senha",
+        "lgLangPortugues": "Portugues",
+        "lgLangIngles": "Inglês",
+        "lgBtnEntrar": "Entrar",
+        "lgIdioma": "Idioma",
+        "lgSair": "Sair",
+        "administracao": {
+            "lgTituloAcompanhamento": "Acompanhamento",
+            "lgTituloUsuarios": "Usuários",
+            "lgGerenciamentoUsuarios": "Gerenciamento de Usuários"
+        },
+        "Usuarios": {
+            "dataTable": {
+                "sEmptyTable": "Nenhum registro encontrado",
+                "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sInfoThousands": ".",
+                "sLengthMenu": "_MENU_ resultados por página",
+                "sLoadingRecords": "Carregando...",
+                "sProcessing": "Processando...",
+                "sZeroRecords": "Nenhum registro encontrado",
+                "sSearch": "Pesquisar",
+                "oPaginate": {
+                    "sNext": "Próximo",
+                    "sPrevious": "Anterior",
+                    "sFirst": "Primeiro",
+                    "sLast": "Último"
+                },
+                "oAria": {
+                    "sSortAscending": ": Ordenar colunas de forma ascendente",
+                    "sSortDescending": ": Ordenar colunas de forma descendente"
+                }
+            }
+        },
+        "Erros": {
+            "lgErro": "Erro",
+            "lgErroLogar": "Erro ao tentar logar!",
+            "lgLoginVazio": "O login não pode ser vazio!",
+            "lgSenhaVazio": "A senha não pode ser vazia!"
         }
     },
-    "enUS":{
-        "lgUsuario":"User",
-        "lgSenha":"Password",
-        "lgPlaceUsuario":"Enter your user",
-        "lgPlaceSenha":"Enter your password",
-        "lgLangPortugues":"Portuguese",
-        "lgLangIngles":"English",
-        "lgBtnEntrar":"Enter",
-        "lgIdioma":"Language",
-        "Erros":{
-            "lgErro":"Error",
-            "lgErroLogar":"Error while trying to login!",
-            "lgLoginVazio":"Login can not be empty!",
-            "lgSenhaVazio":"Password can not be empty!"
+    "enUS": {
+        "lgUsuario": "User",
+        "lgSenha": "Password",
+        "lgPlaceUsuario": "Enter your user",
+        "lgPlaceSenha": "Enter your password",
+        "lgLangPortugues": "Portuguese",
+        "lgLangIngles": "English",
+        "lgBtnEntrar": "Enter",
+        "lgIdioma": "Language",
+        "lgSair": "Exit",
+        "administracao": {
+            "lgTituloAcompanhamento": "Attendance",
+            "lgTituloUsuarios": "Users",
+            "lgGerenciamentoUsuarios": "User Management"
+        },
+        "Usuarios": {
+            "dataTable": {
+                "sEmptyTable": "No data available in table",
+                "sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+                "sInfoEmpty": "Showing 0 to 0 of 0 entries",
+                "sInfoFiltered": "(filtered from _MAX_ total entries)",
+                "sInfoPostFix": "",
+                "sInfoThousands": ",",
+                "sLengthMenu": "Show _MENU_ entries",
+                "sLoadingRecords": "Loading...",
+                "sProcessing": "Processing...",
+                "sSearch": "Search:",
+                "sZeroRecords": "No matching records found",
+                "oPaginate": {
+                    "sFirst": "First",
+                    "sLast": "Last",
+                    "sNext": "Next",
+                    "sPrevious": "Previous"
+                },
+                "oAria": {
+                    "sSortAscending": ": activate to sort column ascending",
+                    "sSortDescending": ": activate to sort column descending"
+                }
+            }
+        },
+        "Erros": {
+            "lgErro": "Error",
+            "lgErroLogar": "Error while trying to login!",
+            "lgLoginVazio": "Login can not be empty!",
+            "lgSenhaVazio": "Password can not be empty!"
         }
     }
 }

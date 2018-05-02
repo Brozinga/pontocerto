@@ -104,11 +104,16 @@ main {
     position: relative;
     min-height: 100vh;
     min-height: -webkit-calc(100vh - 88px);
-    min-height:    -moz-calc(100vh - 88px);
-    min-height:         calc(100vh - 88px);
+    min-height: -moz-calc(100vh - 88px);
+    min-height: calc(100vh - 88px);
 }
 
-.centered{
+.margin-size {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.centered {
     text-align: center;
 }
 
@@ -121,11 +126,11 @@ main {
     z-index: 1;
 }
 
-.margin-lang > div > .heading{
+.margin-lang > div > .heading {
     float: right;
 }
 
-.footer> div > div p {
+.footer > div > div p {
     font-weight: 100;
     color: #999;
 }
@@ -136,16 +141,106 @@ main {
     width: 100%;
 }
 
-.ErroInformacao{
+.ErroInformacao {
     display: none;
 }
 
-.blue-font{
+.blue-font {
     color: #127ba3;
 }
 
-.blue-font > i{
+.blue-font > i {
     color: #cac9c9;
+}
+
+.exitInfo {
+    display: none;
+}
+
+/* DataTable Layout Modify */
+
+.dataTables_filter {
+    font-size: 1rem;
+    position: relative;
+    text-align: left;
+}
+
+.dataTables_filter > label > input {
+    -webkit-appearance: none;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: none;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-size: 0.8rem;
+    height: 2.25em;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding: calc(0.375em - 1px) calc(0.625em - 1px);
+    position: relative;
+    vertical-align: top;
+    background-color: #fff;
+    border-color: #dbdbdb;
+    color: #363636;
+}
+
+table.dataTable {
+    border-collapse: collapse;
+}
+table.dataTable.display tbody tr.odd {
+    background-color: #ffffff;
+}
+
+table.dataTable tbody tr.odd:hover,
+table.dataTable tbody tr.even:hover {
+    background-color: #158cba;
+    color: #fff;
+}
+table {
+    line-height: 1;
+}
+
+.dataTables_length > label > select {
+    /* -moz-appearance: none;
+    -webkit-appearance: none; */
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: none;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-size: 1rem;
+    padding: calc(0.375em - 1px) calc(0.625em - 1px);
+    position: relative;
+    background-color: #fff;
+    border-color: #dbdbdb;
+    color: #363636;
+    cursor: pointer;
+    font-size: 1em;
+    max-width: 100%;
+    outline: 0;
+    border-width: 1px 1px 4px;
+    padding-right: 35px;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 1px solid rgb(202, 202, 202) !important;
+    margin-bottom: 10px;
+}
+
+table.dataTable thead th,
+table.dataTable thead td {
+    padding: 10px 18px;
+    border-bottom: 1px solid rgb(180, 179, 179);
 }
 
 /* // Small devices (landscape phones, 576px and up) */
@@ -164,7 +259,6 @@ main {
         box-shadow: none;
         top: 101%;
     }
-
 }
 
 /* // Large devices (desktops, 992px and up) */
@@ -174,13 +268,14 @@ main {
         box-shadow: none;
         top: 101%;
     }
-    .navbar-link{
+    .navbar-link {
         color: rgb(111, 144, 194);
         font-size: 12pt;
     }
 
-    a.navbar-link.is-active, a.navbar-link:hover {
-        background-color: #FFFFFF;
+    a.navbar-link.is-active,
+    a.navbar-link:hover {
+        background-color: #ffffff;
         cursor: none;
         color: rgb(111, 144, 194);
     }
@@ -188,7 +283,8 @@ main {
 
 /* // Extra large devices (large desktops, 1200px and up) */
 
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+}
 
 /* ==========================================================================
    Helper classes
@@ -288,9 +384,9 @@ main {
 }
 
 @media print,
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 1.25dppx),
-(min-resolution: 120dpi) {
+    (-webkit-min-device-pixel-ratio: 1.25),
+    (min-resolution: 1.25dppx),
+    (min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
 

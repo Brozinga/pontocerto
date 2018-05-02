@@ -22,6 +22,8 @@ $(document).ready(() => {
             })
             .fail(function () {
                 console.log("error");
+                verificarLinguaPreferencia();
+                verificarLingua();
             });
     }
 
@@ -69,6 +71,10 @@ $(document).ready(() => {
 
     //Função para Traduzir
     function traduzir(tradutor) {
+        //Geral #####################################################################################
+        $('[data-language="lgSair"]').text(tradutor.lgSair);
+
+        //Tela de Login #############################################################################
         $('[data-language="lgUsuario"]').text(tradutor.lgUsuario + ':');
         $('[data-language="lgSenha"]').text(tradutor.lgSenha + ':');
         $('[data-language="lgLangPortugues"]').text(tradutor.lgLangPortugues);
@@ -77,5 +83,10 @@ $(document).ready(() => {
         $('[data-language="lgPlaceSenha"]').prop('placeholder', tradutor.lgPlaceSenha);
         $('[data-language="lgBtnEntrar"]').text(tradutor.lgBtnEntrar);
         $('[data-language="lgIdioma"]').text(tradutor.lgIdioma + ':');
+
+        //Tela de Administração #####################################################################
+        $('[data-language="lgTituloAcompanhamento"]').text(tradutor.administracao.lgTituloAcompanhamento);
+        $('[data-language="lgTituloUsuarios"]').text(tradutor.administracao.lgTituloUsuarios);
+        $('[data-language="lgGerenciamentoUsuarios"]').text(tradutor.administracao.lgGerenciamentoUsuarios);
     }
 });
