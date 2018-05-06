@@ -109,20 +109,28 @@ $(document).ready(function () {
         }
 
 
-
-
         //Dados que virão do BackEnd.
         var dataSet = [
             ["1", "Tiger Nixon", "A111", "tnixon", "3", "true"],
             ["2", "Garrett Winters", "A112", "gwinters", "2", "true"],
             ["3", "Ashton Cox", "A113", "acox", "3", "true"],
+            ["4", "Ashton Cox", "A113", "acox", "3", "true"],
+            ["5", "Ashton Cox", "A113", "acox", "3", "true"],
+            ["6", "Ashton Cox", "A113", "acox", "3", "true"],
+            ["7", "Ashton Cox", "A113", "acox", "3", "true"],
+            ["8", "Ashton Cox", "A113", "acox", "3", "true"],
+            ["9", "Ashton Cox", "A113", "acox", "3", "true"],
+            ["10", "Ashton Cox", "A113", "acox", "3", "true"],
+            ["11", "Ashton Cox", "A113", "acox", "3", "true"],
+            ["12", "Ashton Cox", "A113", "acox", "3", "true"],
+            ["13", "Ashton Cox", "A113", "acox", "3", "true"],
         ];
 
 
         //Montando a tabela de Dados.
         var table = $('#example').DataTable({
             data: dataSet,
-            responsive: true,
+            responsive: false,
             "language": lang[startLang].Usuarios.dataTable,
             "rowCallback": function (row, data, index) {
 
@@ -176,6 +184,14 @@ $(document).ready(function () {
         //Carregando dados para Edição advindos do BackEnd.
         $('#example tbody').on('click', 'tr', function () {
             var dados = dataSet[$(this).children('td:eq(0)').text() - 1];
+
+            var collapsible = $('.collapsible').children('.collapsible-body');
+            if (collapsible.css('display') == 'none') {
+                collapsible.slideDown();
+                $('.collapsible').children('.card-header').children('.card-header-icon').children('.icon').fadeOut("slow", function(){
+                    $(this).html('<i class="fas fa-angle-up"></i>').fadeIn();
+                });
+            }
 
             removendoDangerSenha();
             removendoDangerConfSenha();
