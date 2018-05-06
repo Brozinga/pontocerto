@@ -9,12 +9,28 @@
         "lgBtnEntrar": "Entrar",
         "lgIdioma": "Idioma",
         "lgSair": "Sair",
+        "lgAdicionar":"Adicionar",
+        "lgAtualizar":"Atualizar",
+        "lgLimpar":"Limpar",
         "administracao": {
             "lgTituloAcompanhamento": "Acompanhamento",
             "lgTituloUsuarios": "Usuários",
             "lgGerenciamentoUsuarios": "Gerenciamento de Usuários"
         },
         "Usuarios": {
+            "lgControleUsuarios":"Controle de Usuários",
+            "lgNome":"Nome",
+            "lgMatricula": "Matrícula",
+            "lgLogin": "Login",
+            "lgSenhaUsuario": "Senha",
+            "lgConfSenhaUsuario": "Confirmação de Senha",
+            "lgAcesso": "Nível de Acesso",
+            "lgAcessoFunc": "Funcionário",
+            "lgAcessoSuper": "Supervisor",
+            "lgAcessoAdmin": "Administrador",
+            "lgAtividade": "Atividade",
+            "lgAtividadeAtivo": "Ativo",
+            "lgAtividadeInativo": "Inativo",
             "dataTable": {
                 "sEmptyTable": "Nenhum registro encontrado",
                 "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
@@ -43,7 +59,13 @@
             "lgErro": "Erro",
             "lgErroLogar": "Erro ao tentar logar!",
             "lgLoginVazio": "O login não pode ser vazio!",
-            "lgSenhaVazio": "A senha não pode ser vazia!"
+            "lgSenhaVazio": "A senha não pode ser vazia!",
+            "lgNomeVazio":"O nome não pode ser vazio!",
+            "lgMatriculaVazia":"A matrícula não pode ser vazia!",
+            "lgConfSenhaVazia":"A confirmação da senha não pode ser vazia!",
+            "lgAcessoVazio": "Favor selecionar um Nível de Acesso!",
+            "lgAtividadeVazio": "Favor selecionar se o usuário está Ativo!",
+            "lgConfirmacaoSenhaIncorreto":"A senha e a confirmação da senha são diferentes!"
         }
     },
     "enUS": {
@@ -56,12 +78,28 @@
         "lgBtnEntrar": "Enter",
         "lgIdioma": "Language",
         "lgSair": "Exit",
+        "lgAdicionar":"Add",
+        "lgAtualizar":"Update",
+        "lgLimpar":"Clear",
         "administracao": {
             "lgTituloAcompanhamento": "Attendance",
             "lgTituloUsuarios": "Users",
             "lgGerenciamentoUsuarios": "User Management"
         },
         "Usuarios": {
+            "lgControleUsuarios":"User Controls",
+            "lgNome":"Name",
+            "lgMatricula": "Registration",
+            "lgLogin": "Login",
+            "lgSenhaUsuario": "Password",
+            "lgConfSenhaUsuario": "Password Confirmation",
+            "lgAcesso": "Level of Access",
+            "lgAcessoFunc": "Employee",
+            "lgAcessoSuper": "Supervisor",
+            "lgAcessoAdmin": "Administrator",
+            "lgAtividade": "Activity",
+            "lgAtividadeAtivo": "Active",
+            "lgAtividadeInativo": "Inactive",
             "dataTable": {
                 "sEmptyTable": "No data available in table",
                 "sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
@@ -90,7 +128,13 @@
             "lgErro": "Error",
             "lgErroLogar": "Error while trying to login!",
             "lgLoginVazio": "Login can not be empty!",
-            "lgSenhaVazio": "Password can not be empty!"
+            "lgSenhaVazio": "Password can not be empty!",
+            "lgNomeVazio":"Name can not be empty!",
+            "lgMatriculaVazia":"Registration can not be empty!",
+            "lgConfSenhaVazia":"Password confirmation can not be empty!",
+            "lgAcessoVazio": "Please select an Access Level!",
+            "lgAtividadeVazio": "Please select if the user is Active!",
+            "lgConfirmacaoSenhaIncorreto":"Password and password confirmation are different!"
         }
     }
 }

@@ -41,64 +41,143 @@
         <![endif]-->
 
     <!-- Add your site or application content here -->
+
     <main>
-        <nav class="navbar is-dark">
-            <div class="navbar-brand">
-              <a class="navbar-item" href="http://bulma.io">
-                <img src="img/logo-branco.png" title="Logo do Projeto de Controle de Horas, Ponto Certo!" alt="Logo do Projeto de Controle de Horas, Ponto Certo!">
-              </a>
-              <div class="navbar-burger burger" data-target="navMenuExample11">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-            <div id="navMenuExample11" class="navbar-menu">
-              <div class="navbar-start">
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link" data-language="lgTituloAcompanhamento" href="#"></a>
-                  <div class="navbar-dropdown ">
-                    <a class="navbar-item " href="#"></a>
-                    <a class="navbar-item " href="#"></a>
-                  </div>
-                </div>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link" href="#" data-language="lgTituloUsuarios" ></a>
-                        <div class="navbar-dropdown">
-                        <a class="navbar-item " href="usuarios.html" target="_self" data-language="lgGerenciamentoUsuarios" ></a>
-                        </div>
-                  </div>
-              </div>
-
-              <div class="navbar-end">
-                    <a class="navbar-item" href="index.html" target="_self" title="Logout">
-                       <i class="fas fa-sign-out-alt"></i><span class="exitInfo" style="margin-left: 10px;" data-language="lgSair"></span>
+        <header>
+            <nav class="navbar is-dark">
+                <div class="navbar-brand">
+                    <a class="navbar-item">
+                        <img src="img/logo-branco.png" title="Logo do Projeto de Controle de Horas, Ponto Certo!" alt="Logo do Projeto de Controle de Horas, Ponto Certo!">
                     </a>
-                  </div>
+                    <div class="navbar-burger burger" data-target="navMenuExample11">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div id="navMenuExample11" class="navbar-menu">
+                    <div class="navbar-start">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link" data-linguagem="lgTituloAcompanhamento" href="#"></a>
+                            <div class="navbar-dropdown ">
+                                <a class="navbar-item " href="#"></a>
+                                <a class="navbar-item " href="#"></a>
+                            </div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link" href="#" data-linguagem="lgTituloUsuarios"></a>
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item " href="usuarios.html" target="_self" data-linguagem="lgGerenciamentoUsuarios"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="index.html" target="_self" title="Logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span class="exitInfo" style="margin-left: 10px;" data-linguagem="lgSair"></span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="loading">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
             </div>
-          </nav>
-          <article class="container margin-size">
-
-
-                <div class="box">
-                        <article class="media">
-                          <div class="media-content">
-                                <table id="example" class="table" width="100%"></table>
-                          </div>
-                        </article>
-                      </div>
-
-
-
-          </article>
+            <div class="loading-background"></div>
+        </div>
+        <article class="container margin-size blur">
+            <div class="card collapsible margin-size col-xs-24 col-sm-24 col-md-24">
+                <header class="card-header collapsible-head">
+                    <p class="card-header-title" data-linguagem="lgControleUsuarios"></p>
+                    <a class="card-header-icon">
+                        <span class="icon">
+                            <i class="fas fa-angle-up"></i>
+                        </span>
+                    </a>
+                </header>
+                <div class="collapsible-body">
+                    <div class="card-content">
+                        <div class="content">
+                            <div>
+                                <div class="field col-sm-24 col-md-12">
+                                    <p class="control">
+                                        <input class="input" id="usuarioNome" data-linguagem="lgNome" type="text">
+                                    </p>
+                                </div>
+                                <div class="field col-sm-12 col-md-6">
+                                    <p class="control">
+                                        <input class="input" id="usuarioMatricula" data-linguagem="lgMatricula" type="text">
+                                    </p>
+                                </div>
+                                <div class="field col-sm-12 col-md-6">
+                                    <p class="control">
+                                        <input class="input" id="usuarioLogin" data-linguagem="lgLogin" type="text">
+                                    </p>
+                                </div>
+                                <div class="field col-sm-12 col-md-6">
+                                    <p class="control">
+                                        <input class="input" id="usuarioSenha" data-linguagem="lgSenhaUsuario" type="password">
+                                    </p>
+                                </div>
+                                <div class="field col-sm-12 col-md-6">
+                                    <p class="control">
+                                        <input class="input" id="usuarioConfSenha" type="password" data-linguagem="lgConfSenhaUsuario">
+                                    </p>
+                                </div>
+                                <div class="field col-sm-12 col-md-6">
+                                    <p class="control">
+                                        <span class="select col-100">
+                                            <select class="col-100" id="usuarioAcesso">
+                                                <option disabled selected value="" data-linguagem="lgAcesso"></option>
+                                                <option value="3" data-linguagem="lgAcessoFunc"></option>
+                                                <option value="2" data-linguagem="lgAcessoSuper"></option>
+                                                <option value="1" data-linguagem="lgAcessoAdmin"></option>
+                                            </select>
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="field col-sm-12 col-md-6">
+                                    <p class="control">
+                                        <span class="select col-100">
+                                            <select class="col-100" id="usuarioAtividade">
+                                                <option disabled selected value="" data-linguagem="lgAtividade"></option>
+                                                <option value="true" data-linguagem="lgAtividadeAtivo"></option>
+                                                <option value="false" data-linguagem="lgAtividadeInativo"></option>
+                                            </select>
+                                        </span>
+                                    </p>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="card-footer col-xs-24 col-sm-24 col-md-24">
+                        <a class="card-footer-item" id="usuarioAdicionar" data-linguagem="lgAdicionar"></a>
+                        <a class="card-footer-item" data-linguagem="lgAtualizar"></a>
+                        <a class="card-footer-item" id="usuarioLimpar" data-linguagem="lgLimpar"></a>
+                    </footer>
+                </div>
+            </div>
+            <div class="box col-xs-24 col-sm-24 col-md-24">
+                <article class="media">
+                    <div class="media-content">
+                        <table id="example" class="table" width="100%"></table>
+                    </div>
+                </article>
+            </div>
+        </article>
     </main>
     <footer class="footer">
         <div class="container">
-            <div class="col-md-24">
+            <div class="col-xs-24 col-sm-24 col-md-24">
                 <p class="centered">Projeto by Otávio Menhart e Fernando Brozinga</p>
             </div>
         </div>
     </footer>
+
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="js/tradutor.js"></script>

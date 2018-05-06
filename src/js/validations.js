@@ -22,34 +22,51 @@ function verificarEmail(email){
     }
 }
 
-function validarLogin(login, senha){
+
+//Validar se o campo é nulo ou vazio.
+function validarNullVazio(campo, erro){
     pegandoLinguagem();
 
-    if(login.val() =='' || login.val() == null){
+    if(campo.val() =='' || campo.val() == null){
         iziToast.error({
             title: lang[startLang].Erros.lgErro,
-            message: lang[startLang].Erros.lgLoginVazio,
+            message: lang[startLang].Erros[erro],
+            theme:'dark',
+            backgroundColor: '#dc3545',
+        });
+        if(campo[0].localName == "select"){
+            campo.parent().addClass('is-danger');
+        }else{
+            campo.addClass('is-danger');
+        }
+        campo.focus();
+
+        return false;
+    }else{
+
+        return true;
+    }
+}
+
+
+//Validar se as senhas coicidem.
+function validarSenhas(senha, confirmacao, erro)
+{
+    pegandoLinguagem();
+
+    if(senha.val() != confirmacao.val()){
+        iziToast.error({
+            title: lang[startLang].Erros.lgErro,
+            message: lang[startLang].Erros[erro],
             theme:'dark',
             backgroundColor: '#dc3545',
         });
 
-        login.addClass('is-danger');
-        login.focus();
+            senha.addClass('is-danger');
+            confirmacao.addClass('is-danger');
+            senha.focus();
 
         return false;
-    }else if(senha.val() == '' || senha.val() == null){
-        iziToast.error({
-            title: lang[startLang].Erros.lgErro,
-            message: lang[startLang].Erros.lgSenhaVazio,
-            theme:'dark',
-            backgroundColor: '#dc3545',
-        });
-
-        senha.addClass('is-danger');
-        senha.focus();
-
-        return false;
-
     }else{
 
         return true;

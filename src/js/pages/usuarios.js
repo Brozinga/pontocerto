@@ -1,67 +1,211 @@
-$(document).ready(function(){
-    //Carregando DataTable framework onde haverá a edição dos Dados dos usuários.
-    $.getScript('js/datatable/datatables.min.js', function(){
+$(document).ready(function () {
 
+    //Importando arquivo de Validação.
+    $.getScript("js/validations.js");
+
+
+    //Carregando DataTable framework onde haverá a edição dos Dados dos usuários.
+    $.getScript('js/datatable/datatables.min.js', function () {
+
+        //Carregando a tradução.
         var startLang;
         var lang;
 
         startLang = localStorage.getItem("languagePref");
         lang = JSON.parse(localStorage.getItem("language"));
 
-    var dataSet = [
-        [ "Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800" ],
-        [ "Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750" ],
-        [ "Ashton Cox", "Junior Technical Author", "San Francisco", "1562", "2009/01/12", "$86,000" ],
-        [ "Cedric Kelly", "Senior Javascript Developer", "Edinburgh", "6224", "2012/03/29", "$433,060" ],
-        [ "Airi Satou", "Accountant", "Tokyo", "5407", "2008/11/28", "$162,700" ],
-        [ "Brielle Williamson", "Integration Specialist", "New York", "4804", "2012/12/02", "$372,000" ],
-        [ "Herrod Chandler", "Sales Assistant", "San Francisco", "9608", "2012/08/06", "$137,500" ],
-        [ "Rhona Davidson", "Integration Specialist", "Tokyo", "6200", "2010/10/14", "$327,900" ],
-        [ "Colleen Hurst", "Javascript Developer", "San Francisco", "2360", "2009/09/15", "$205,500" ],
-        [ "Sonya Frost", "Software Engineer", "Edinburgh", "1667", "2008/12/13", "$103,600" ],
-        [ "Jena Gaines", "Office Manager", "London", "3814", "2008/12/19", "$90,560" ],
-        [ "Quinn Flynn", "Support Lead", "Edinburgh", "9497", "2013/03/03", "$342,000" ],
-        [ "Charde Marshall", "Regional Director", "San Francisco", "6741", "2008/10/16", "$470,600" ],
-        [ "Haley Kennedy", "Senior Marketing Designer", "London", "3597", "2012/12/18", "$313,500" ],
-        [ "Tatyana Fitzpatrick", "Regional Director", "London", "1965", "2010/03/17", "$385,750" ],
-        [ "Michael Silva", "Marketing Designer", "London", "1581", "2012/11/27", "$198,500" ],
-        [ "Paul Byrd", "Chief Financial Officer (CFO)", "New York", "3059", "2010/06/09", "$725,000" ],
-        [ "Gloria Little", "Systems Administrator", "New York", "1721", "2009/04/10", "$237,500" ],
-        [ "Bradley Greer", "Software Engineer", "London", "2558", "2012/10/13", "$132,000" ],
-        [ "Dai Rios", "Personnel Lead", "Edinburgh", "2290", "2012/09/26", "$217,500" ],
-        [ "Jenette Caldwell", "Development Lead", "New York", "1937", "2011/09/03", "$345,000" ],
-        [ "Yuri Berry", "Chief Marketing Officer (CMO)", "New York", "6154", "2009/06/25", "$675,000" ],
-        [ "Caesar Vance", "Pre-Sales Support", "New York", "8330", "2011/12/12", "$106,450" ],
-        [ "Doris Wilder", "Sales Assistant", "Sidney", "3023", "2010/09/20", "$85,600" ],
-        [ "Angelica Ramos", "Chief Executive Officer (CEO)", "London", "5797", "2009/10/09", "$1,200,000" ],
-        [ "Gavin Joyce", "Developer", "Edinburgh", "8822", "2010/12/22", "$92,575" ],
-        [ "Jennifer Chang", "Regional Director", "Singapore", "9239", "2010/11/14", "$357,650" ],
-        [ "Brenden Wagner", "Software Engineer", "San Francisco", "1314", "2011/06/07", "$206,850" ],
-        [ "Fiona Green", "Chief Operating Officer (COO)", "San Francisco", "2947", "2010/03/11", "$850,000" ],
-        [ "Shou Itou", "Regional Marketing", "Tokyo", "8899", "2011/08/14", "$163,000" ],
-        [ "Michelle House", "Integration Specialist", "Sidney", "2769", "2011/06/02", "$95,400" ],
-        [ "Suki Burks", "Developer", "London", "6832", "2009/10/22", "$114,500" ],
-        [ "Prescott Bartlett", "Technical Author", "London", "3606", "2011/05/07", "$145,000" ],
-        [ "Gavin Cortez", "Team Leader", "San Francisco", "2860", "2008/10/26", "$235,500" ],
-        [ "Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050" ],
-        [ "Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675" ]
-    ];
 
-        $('#example').DataTable( {
+        //Limpando os campos de Controle de Usuários.
+        $('#usuarioLimpar').click(function () {
+            limparTodosOsCampos();
+            removerDangerTodos();
+        });
+
+        function limparTodosOsCampos(){
+            $("#usuarioNome").val('');
+            $("#usuarioMatricula").val('');
+            $("#usuarioLogin").val('');
+            $("#usuarioAcesso").val('');
+            $("#usuarioAtividade").val('');
+            $("#usuarioSenha").val('');
+            $("#usuarioConfSenha").val('');
+        }
+
+        function removerDangerTodos(){
+            removendoDangerSenha();
+            removendoDangerConfSenha();
+            removendoDangerNome();
+            removendoDangerMatricula();
+            removendoDangerLogin();
+            removendoDangerAcesso();
+            removendoDangerAtividade();
+        }
+
+
+        $('#usuarioAdicionar').click(function () {
+            removerDangerTodos();
+
+            //Validando os campos se são nulos ou vazios antes da Inserção.
+           if(validarNullVazio($("#usuarioNome"), 'lgNomeVazio') &&
+            validarNullVazio($("#usuarioMatricula"), 'lgMatriculaVazia') &&
+            validarNullVazio($("#usuarioLogin"), 'lgLoginVazio') &&
+            validarNullVazio($("#usuarioSenha"), 'lgSenhaVazio') &&
+            validarNullVazio($("#usuarioConfSenha"), 'lgConfSenhaVazia') &&
+            validarNullVazio($("#usuarioAcesso"), 'lgAcessoVazio') &&
+            validarNullVazio($("#usuarioAtividade"), 'lgAtividadeVazio')){
+                if(validarSenhas($("#usuarioSenha"), $("#usuarioConfSenha"),'lgConfirmacaoSenhaIncorreto')){
+                    iziToast.success({
+                        title: 'Adicionado',
+                        message: 'Adicionado com sucesso!',
+                        theme:'dark',
+                        backgroundColor: '#28a745',
+                    });
+
+                    limparTodosOsCampos();
+                }
+            }
+        });
+
+
+        //Limpando a classe de validação dos Inputs.
+        $('#usuarioNome').keypress(removendoDangerNome);
+
+        function removendoDangerNome() {
+            $('#usuarioNome').removeClass('is-danger');
+        }
+
+        $('#usuarioMatricula').keypress(removendoDangerMatricula);
+
+        function removendoDangerMatricula() {
+            $('#usuarioMatricula').removeClass('is-danger');
+        }
+        $('#usuarioLogin').keypress(removendoDangerLogin);
+
+        function removendoDangerLogin() {
+            $('#usuarioLogin').removeClass('is-danger');
+        }
+
+        $('#usuarioAcesso').change(removendoDangerAcesso);
+
+        function removendoDangerAcesso() {
+            $('#usuarioAcesso').parent().removeClass('is-danger');
+        }
+
+        $('#usuarioAtividade').change(removendoDangerAtividade);
+
+        function removendoDangerAtividade() {
+            $('#usuarioAtividade').parent().removeClass('is-danger');
+        }
+        $('#usuarioSenha').keypress(removendoDangerSenha);
+
+        function removendoDangerSenha() {
+            $('#usuarioSenha').removeClass('is-danger');
+        }
+
+        $('#usuarioConfSenha').keypress(removendoDangerConfSenha);
+
+        function removendoDangerConfSenha() {
+            $('#usuarioConfSenha').removeClass('is-danger');
+        }
+
+
+
+
+        //Dados que virão do BackEnd.
+        var dataSet = [
+            ["1", "Tiger Nixon", "A111", "tnixon", "3", "true"],
+            ["2", "Garrett Winters", "A112", "gwinters", "2", "true"],
+            ["3", "Ashton Cox", "A113", "acox", "3", "true"],
+        ];
+
+
+        //Montando a tabela de Dados.
+        var table = $('#example').DataTable({
             data: dataSet,
             responsive: true,
             "language": lang[startLang].Usuarios.dataTable,
-            columns: [
-                { title: "Name" },
-                { title: "Position" },
-                { title: "Office" },
-                { title: "Extn." },
-                { title: "Start date" },
-                { title: "Salary" }
+            "rowCallback": function (row, data, index) {
+
+                //Setando a tradução de Nível de Acesso.
+                if (data[4] == "3") {
+                    $('td:eq(4)', row).html(lang[startLang].Usuarios.lgAcessoFunc);
+
+                } else if (data[4] == "2") {
+                    $('td:eq(4)', row).html(lang[startLang].Usuarios.lgAcessoSuper);
+
+                } else if (data[4] == "1") {
+                    $('td:eq(4)', row).html(lang[startLang].Usuarios.lgAcessoAdmin);
+
+                };
+
+
+                //Setando a tradução da Atividade.
+                if (data[5] == "true") {
+                    $('td:eq(5)', row).html(lang[startLang].Usuarios.lgAtividadeAtivo);
+
+                } else if (data[5] == "false") {
+                    $('td:eq(5)', row).html(lang[startLang].Usuarios.lgAtividadeInativo);
+
+                }
+
+                $('td:eq(0)', row).prop('hidden', true);
+                $('#example thead tr').children('th:eq(0)').prop('hidden', true);
+            },
+            columns: [{
+                    title: 'line'
+                },
+                {
+                    title: lang[startLang].Usuarios.lgNome
+                },
+                {
+                    title: lang[startLang].Usuarios.lgMatricula
+                },
+                {
+                    title: lang[startLang].Usuarios.lgLogin
+                },
+                {
+                    title: lang[startLang].Usuarios.lgAcesso
+                },
+                {
+                    title: lang[startLang].Usuarios.lgAtividade
+                },
             ]
-        } );
+        });
 
 
+        //Carregando dados para Edição advindos do BackEnd.
+        $('#example tbody').on('click', 'tr', function () {
+            var dados = dataSet[$(this).children('td:eq(0)').text() - 1];
 
+            removendoDangerSenha();
+            removendoDangerConfSenha();
+
+            if (dados[1] != "") {
+                removendoDangerNome();
+            }
+            if (dados[2] != "") {
+                removendoDangerMatricula();
+            }
+            if (dados[3] != "") {
+                removendoDangerLogin();
+            }
+            if (dados[4] != "") {
+                removendoDangerAcesso();
+            }
+            if (dados[5] != "") {
+                removendoDangerAtividade();
+            }
+
+            $("#usuarioNome").val(dados[1]);
+            $("#usuarioMatricula").val(dados[2]);
+            $("#usuarioLogin").val(dados[3]);
+            $("#usuarioAcesso").val(dados[4]);
+            $("#usuarioAtividade").val(dados[5]);
+        });
+
+
+        //Desabilitando o Loading e removendo efeito de Blur do Fundo.
+        $('.loading').fadeOut();
+        $('.container').removeClass('blur');
     });
 });

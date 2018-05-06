@@ -4,17 +4,17 @@ $(document).ready(function () {
     $.getScript("js/validations.js");
 
     //Limpando a classe de validação dos Inputs.
-    $('#frmLoginUsuario').keypress(function () {
-        $('#frmLoginUsuario').removeClass('is-danger');
+    $('#loginUsuario').keypress(function () {
+        $('#loginUsuario').removeClass('is-danger');
     });
-    $('#frmLoginSenha').keypress(function () {
-        $('#frmLoginSenha').removeClass('is-danger');
+    $('#loginSenha').keypress(function () {
+        $('#loginSenha').removeClass('is-danger');
     });
 
     //Validando antes do submit do Form.
-    $('#frmLogin').submit(function () {
+    $('#login').submit(function () {
         event.preventDefault();
-        if (validarLogin($("#frmLoginUsuario"), $('#frmLoginSenha'))) {
+        if (validarNullVazio($("#loginUsuario"),'lgLoginVazio') && validarNullVazio($('#loginSenha'),'lgSenhaVazio')) {
             window.location.href = "administracao.html";
         };
 

@@ -72,21 +72,39 @@ $(document).ready(() => {
     //Função para Traduzir
     function traduzir(tradutor) {
         //Geral #####################################################################################
-        $('[data-language="lgSair"]').text(tradutor.lgSair);
+        $('[data-linguagem="lgSair"]').text(tradutor.lgSair);
 
         //Tela de Login #############################################################################
-        $('[data-language="lgUsuario"]').text(tradutor.lgUsuario + ':');
-        $('[data-language="lgSenha"]').text(tradutor.lgSenha + ':');
-        $('[data-language="lgLangPortugues"]').text(tradutor.lgLangPortugues);
-        $('[data-language="lgLangIngles"]').text(tradutor.lgLangIngles);
-        $('[data-language="lgPlaceUsuario"]').prop('placeholder', tradutor.lgPlaceUsuario);
-        $('[data-language="lgPlaceSenha"]').prop('placeholder', tradutor.lgPlaceSenha);
-        $('[data-language="lgBtnEntrar"]').text(tradutor.lgBtnEntrar);
-        $('[data-language="lgIdioma"]').text(tradutor.lgIdioma + ':');
+        $('[data-linguagem="lgUsuario"]').text(tradutor.lgUsuario + ':');
+        $('[data-linguagem="lgSenha"]').text(tradutor.lgSenha + ':');
+        $('[data-linguagem="lgLangPortugues"]').text(tradutor.lgLangPortugues);
+        $('[data-linguagem="lgLangIngles"]').text(tradutor.lgLangIngles);
+        $('[data-linguagem="lgPlaceUsuario"]').prop('placeholder', tradutor.lgPlaceUsuario);
+        $('[data-linguagem="lgPlaceSenha"]').prop('placeholder', tradutor.lgPlaceSenha);
+        $('[data-linguagem="lgBtnEntrar"]').text(tradutor.lgBtnEntrar);
+        $('[data-linguagem="lgIdioma"]').text(tradutor.lgIdioma + ':');
 
         //Tela de Administração #####################################################################
-        $('[data-language="lgTituloAcompanhamento"]').text(tradutor.administracao.lgTituloAcompanhamento);
-        $('[data-language="lgTituloUsuarios"]').text(tradutor.administracao.lgTituloUsuarios);
-        $('[data-language="lgGerenciamentoUsuarios"]').text(tradutor.administracao.lgGerenciamentoUsuarios);
+        $('[data-linguagem="lgTituloAcompanhamento"]').text(tradutor.administracao.lgTituloAcompanhamento);
+        $('[data-linguagem="lgTituloUsuarios"]').text(tradutor.administracao.lgTituloUsuarios);
+        $('[data-linguagem="lgGerenciamentoUsuarios"]').text(tradutor.administracao.lgGerenciamentoUsuarios);
+
+         //Tela de Usuários #########################################################################
+         $('[data-linguagem="lgAdicionar"]').text(tradutor.lgAdicionar);
+         $('[data-linguagem="lgAtualizar"]').text(tradutor.lgAtualizar);
+         $('[data-linguagem="lgLimpar"]').text(tradutor.lgLimpar);
+         $('[data-linguagem="lgControleUsuarios"]').text(tradutor.Usuarios.lgControleUsuarios);
+         $('[data-linguagem="lgNome"]').prop('placeholder',tradutor.Usuarios.lgNome);
+         $('[data-linguagem="lgMatricula"').prop('placeholder',tradutor.Usuarios.lgMatricula);
+         $('[data-linguagem="lgLogin"').prop('placeholder',tradutor.Usuarios.lgLogin);
+         $('[data-linguagem="lgSenhaUsuario"').prop('placeholder',tradutor.Usuarios.lgSenhaUsuario);
+         $('[data-linguagem="lgConfSenhaUsuario"').prop('placeholder',tradutor.Usuarios.lgConfSenhaUsuario);
+         $('[data-linguagem="lgAcesso"]').text(tradutor.Usuarios.lgAcesso);
+         $('[data-linguagem="lgAcessoFunc"]').text(tradutor.Usuarios.lgAcessoFunc);
+         $('[data-linguagem="lgAcessoSuper"]').text(tradutor.Usuarios.lgAcessoSuper);
+         $('[data-linguagem="lgAcessoAdmin"]').text(tradutor.Usuarios.lgAcessoAdmin);
+         $('[data-linguagem="lgAtividade"]').text(tradutor.Usuarios.lgAtividade);
+         $('[data-linguagem="lgAtividadeAtivo"]').text(tradutor.Usuarios.lgAtividadeAtivo);
+         $('[data-linguagem="lgAtividadeInativo"]').text(tradutor.Usuarios.lgAtividadeInativo);
     }
 });
