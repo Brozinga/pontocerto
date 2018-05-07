@@ -3,31 +3,49 @@ $(document).ready(() => {
     let startLang;
     let lang;
 
-    //Pegar o arquivo de Tradutor.
-    function PegarTraducao() {
-        $.getJSON("js/tradutor.json", {
-                format: "json"
-            })
-            .done(function (data) {
-
-                //Gravando a Tradução localmente para aumentar a performance.
-                localStorage.removeItem("language");
-                localStorage.setItem("language", JSON.stringify(data));
-                lang = data;
-
-                //Executando pra verificar se já está setado uma linguagem preferida e setar no sistema.
-                verificarLinguaPreferencia();
-                verificarLingua();
-                mudarTraducao(startLang);
-            })
-            .fail(function () {
-                console.log("error");
-                verificarLinguaPreferencia();
-                verificarLingua();
-            });
+    //Função para Pegar o JSON via XMLHttpRequest
+    function loadJSON(url, success, error) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                try {
+                    var JSONObject = JSON.parse(xmlhttp.responseText);
+                    success(JSONObject);
+                } catch (e) {
+                    error(e);
+                }
+            } else {
+                var e = { "readyState": xmlhttp.readyState, "status": xmlhttp.status };
+                if ([200, 0].indexOf(xmlhttp.status) == -1 && xmlhttp.readyState == 4) {
+                    error(e);
+                }
+            }
+        }
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
     }
 
+    function PegarTraducao(){
+
+    loadJSON("traducao/tradutor.json", function(data){
+        //Gravando a Tradução localmente para aumentar a performance.
+        localStorage.removeItem("language");
+        localStorage.setItem("language", JSON.stringify(data));
+        lang = data;
+
+        //Executando pra verificar se já está setado uma linguagem preferida e setar no sistema.
+        verificarLinguaPreferencia();
+        verificarLingua();
+        mudarTraducao(startLang);
+    },function () {
+        console.log("error");
+        verificarLinguaPreferencia();
+        verificarLingua();
+    });
+}
+
     PegarTraducao();
+
 
     //Começando a traduzir o arquivo ###############################################
 

@@ -28,7 +28,7 @@
             "lgAcessoFunc": "Funcionário",
             "lgAcessoSuper": "Supervisor",
             "lgAcessoAdmin": "Administrador",
-            "lgAtividade": "Atividade",
+            "lgAtividade": "Status",
             "lgAtividadeAtivo": "Ativo",
             "lgAtividadeInativo": "Inativo",
             "dataTable": {
@@ -97,7 +97,7 @@
             "lgAcessoFunc": "Employee",
             "lgAcessoSuper": "Supervisor",
             "lgAcessoAdmin": "Administrator",
-            "lgAtividade": "Activity",
+            "lgAtividade": "Status",
             "lgAtividadeAtivo": "Active",
             "lgAtividadeInativo": "Inactive",
             "dataTable": {
